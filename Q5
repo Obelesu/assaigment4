@@ -1,0 +1,43 @@
+#include <stdio.h> 
+
+int tmp=20; 
+
+main( ) {    
+
+    printf("%d ",tmp);    
+
+    func( );    
+
+    printf("%d ",tmp); 
+
+} 
+
+func() {    
+
+    static int tmp=10;    
+
+    printf("%d ",tmp); 
+
+}
+OUTPUT:-
+#include <stdio.h>
+
+int tmp = 20;
+
+void func(); // function prototype for func()
+
+int main() {
+    printf("%d ", tmp);
+    func();
+    printf("%d ", tmp);
+    return 0; // added return statement
+}
+
+void func() {
+    static int tmp = 10;
+    printf("%d ", tmp);
+}
+The output of this code will be:
+
+Copy code
+20 10 20
